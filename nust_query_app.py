@@ -5,7 +5,7 @@ from tkinter import scrolledtext
 from sklearn.metrics.pairwise import cosine_distances
 
 genai.configure(api_key="AIzaSyC4K40iwfMXj9d-rUxXbX5h7xI8m0IPo98")
-df = pd.read_pickle("embeddings")
+df = pd.read_pickle("embeddings.pkl")
 
 def get_embeddings(text):
     model = 'models/text-embedding-004'
