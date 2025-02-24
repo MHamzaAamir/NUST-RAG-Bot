@@ -3,8 +3,12 @@ import google.generativeai as genai
 import tkinter as tk
 from tkinter import scrolledtext
 from sklearn.metrics.pairwise import cosine_distances
+import os
+from dotenv import load_dotenv
 
-genai.configure(api_key="AIzaSyC4K40iwfMXj9d-rUxXbX5h7xI8m0IPo98")
+load_dotenv()
+
+genai.configure(api_key=os.getenv("GENAI_API_KEY"))
 df = pd.read_pickle("embeddings.pkl")
 
 def get_embeddings(text):
